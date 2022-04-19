@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5600e0, #9236e2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*Style ScrollBar*/
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #ddaaef;
+}
+
+/*To Do List page*/
+
+.to-do-list-page{
+    max-height: 400px;
+    max-width: 550px;
+    width: 100%;
+    height: 100%;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1C1C;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #E1E1E6;
+}
+
+h1{
+    color:#E1E1E6;
+}
+
+.form-page{
+    min-width: 100%;
+}
+
+form input, form button {
+    margin-top: 10px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    color: #E1E1E6;
+    background-color: #2e2e35;
+}
+form input{
+    margin-left: 10px;
+    width: 75%;
+}
+form button{
+    width: 19%;
+    color:#e4e1e6;
+    background: #481e76;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    background:#9f34fd;
+    color:#e8e8ed;
+}
+
+/*To do List tasks*/
+.to-do-list-task-page{
+    box-sizing: border-box;
+    display: flex;
+}
+
+
+.to-do-list{
+    box-sizing: border-box;
+    max-height: 250px;
+    list-style: none;
+    overflow-y: auto;
+}
+
+
+.to-do{
+    width: 510px;
+    height: 45px;
+    margin:  14px 10px 0px;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #c186ff;
+    transition: all ease 0.5s;
+}
+
+.to-do li{
+    flex:1;
+}
+
+.to-do-check{
+    text-decoration: line-through;
+    color:#e3e1e6;
+    opacity: 0.7;
+}
+
+.complete-btn, .delete-btn{
+    background-color: transparent;
+    color: #380469;
+    border: none;
+    outline: none;
+    padding: 0.9rem;
+}
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.complete-btn:hover{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 0.1s;
+    background-color: #129c47;
+    color: #E1E1E6;
+}
+
+.delete-btn:hover{   
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 0.1s;
+    background-color:  #bc3232;
+    color: #E1E1E6;
+}
+
+/*Animation delete task*/
+.fall{
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    opacity: 0;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+}
+
+/*Resposive*/
+@media (max-width: 768px){
+    .to-do-list-page{
+        width: 475px;
+    }
+    
+    .to-do{
+        width: 425px;
+    } 
+    
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+}
+
+@media (max-width: 480px){
+    .to-do-list-page{
+        width: 365px;
+    }
+    
+    .to-do{
+        width: 305px;
+    } 
+    
+    ::-webkit-scrollbar{
+        width: 5px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 320px){
+    .to-do-list-page{
+        width: 245px;
+    }
+
+    form input{
+        margin-left: 10px;
+        width: 72%;
+    }
+    
+    .to-do{
+        width: 205px;
+    } 
+    
+    ::-webkit-scrollbar{
+        width: 4px;
+    }
+}
+
+@media (max-width: 240px){
+    .to-do-list-page{
+        width: 215px;
+    }
+
+    form input{
+        margin-left: 10px;
+        width: 70%;
+    }
+    
+    .to-do{
+        width: 195px;
+    } 
+    
+    ::-webkit-scrollbar{
+        width: 4px;
+        margin-right: 5px;
+    }
+}
